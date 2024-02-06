@@ -1,6 +1,6 @@
 describe('search functionality test for ardea',()=>{
 
-    it.skip('Auto search functionality with valid details ',()=>{
+    it('Auto search functionality with valid details ',()=>{
       Cypress.on('uncaught:exception',(err,runnable)=>{
 
         return false
@@ -35,7 +35,7 @@ describe('search functionality test for ardea',()=>{
     
     })
 
-       it.skip('Auto suggestion functionality with invlid details',()=>{
+        it('Auto suggestion functionality with invlid details',()=>{
         Cypress.on('uncaught:exception',(err,runnable)=>{
         return false
         })
@@ -49,7 +49,7 @@ describe('search functionality test for ardea',()=>{
 
         })
 
-        it('Auto suggestion functionality with filter section',()=>{
+          it.only('Auto suggestion functionality with filter section',()=>{
           Cypress.on('uncaught:exception',(err,runnable)=>{
           return false
           })
@@ -63,7 +63,13 @@ describe('search functionality test for ardea',()=>{
           cy.wait(2000)
           //cy.get("#SortBy").select("Price, low to high")
           cy.get("#SortBy").select(1).invoke("val").should("eq","price-ascending")
-  
+          cy.wait(2000)
+          cy.get("#SortBy").select(2).invoke("val").should("eq","price-descending")
+          cy.get("#CardLink--7287162961964").click()
+          cy.get('#ProductInfo-template--15757381140524__main > div.product__title > h1 > button').click()
+          cy.get ("#ProductSubmitButton-template--15757381140524__main").click()
+          cy.get("#cart-notification-button").click({force: true})
+
           })
 
 
