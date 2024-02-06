@@ -25,7 +25,7 @@ describe('Dragand dropfunctionality',()=>{
        cy.get("div[role='option']").each(function($ele,index,$list){
         if($ele.text().includes("selenium webdriver")) {
         
-          cy.wrap($ele).click()
+         cy.wrap($ele).click()
 
 
         }else{
