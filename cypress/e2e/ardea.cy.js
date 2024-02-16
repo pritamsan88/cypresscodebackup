@@ -71,7 +71,7 @@ describe('search functionality test for ardea',()=>{
           cy.wait(4000)
           cy.get ("#ProductSubmitButton-template--15757381140524__main").click()
           cy.get("#cart-notification-button").click({force: true})
-           
+                 
           })
 
 
