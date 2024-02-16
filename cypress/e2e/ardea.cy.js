@@ -63,10 +63,12 @@ describe('search functionality test for ardea',()=>{
           cy.wait(2000)
           //cy.get("#SortBy").select("Price, low to high")
           cy.get("#SortBy").select(1).invoke("val").should("eq","price-ascending")
-          cy.wait(2000)
+          cy.wait(4000)
           cy.get("#SortBy").select(2).invoke("val").should("eq","price-descending")
+          cy.wait(4000)
           cy.get("#CardLink--7287162961964").click()
           cy.get('#ProductInfo-template--15757381140524__main > div.product__title > h1 > button').click()
+          cy.wait(4000)
           cy.get ("#ProductSubmitButton-template--15757381140524__main").click()
           cy.get("#cart-notification-button").click({force: true})
 
